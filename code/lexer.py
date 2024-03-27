@@ -113,7 +113,7 @@ class Lexer:
                 self.nextChar()
 
                 # Must have at least one digit after decimal.
-                if not self.peek().isdigit(): 
+                if not self.peek().isdigit():
                     # Error!
                     self.abort("Illegal character in number.")
                 while self.peek().isdigit():
@@ -142,9 +142,9 @@ class Lexer:
         self.nextChar()
         return token
     
-       
+
         
-class Token:   
+class Token:
     def __init__(self, tokenText, tokenKind):
         self.text = tokenText   # The token's actual text. Used for identifiers, strings, and numbers.
         self.kind = tokenKind   # The TokenType that this token is classified as.
@@ -155,7 +155,7 @@ class Token:
             # Relies on all keyword enum values being 1XX.
             if kind.name == tokenText and kind.value >= 100 and kind.value < 200:
                 return kind
-        return None        
+        return None
         
 class TokenType(enum.Enum):
 	EOF = -1
@@ -176,7 +176,7 @@ class TokenType(enum.Enum):
 	REPEAT = 110
 	ENDWHILE = 111
 	# Operators.
-	EQ = 201  
+	EQ = 201
 	PLUS = 202
 	MINUS = 203
 	ASTERISK = 204
