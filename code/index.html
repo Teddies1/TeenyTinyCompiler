@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Processor</title>
+</head>
+<body>
+    <h1>File Processor</h1>
+    <form id="uploadForm" enctype="multipart/form-data">
+        <input type="file" id="fileInput" name="fileInput" accept=".txt">
+        <button type="submit">Process File</button>
+    </form>
+    <p id="output"></p>
+
+    <script>
+        document.getElementById("uploadForm").addEventListener("submit", function(event){
+            event.preventDefault(); // Prevent default form submission
+
+            var formData = new FormData();
+            formData.append("file", document.getElementById("fileInput").files[0]);
+
+            fetch("/compile_and_return", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.blob())
+            .then(blob => {
+                var url = window.URL.createObjectURL(blob);
+                var a = document.createElement("a");
+                a.href = url;
+                a.download = "output.txt";
+                document.body.appendChild(a);
+                a.click();
+                window.URL.revokeObjectURL(url);
+            });
+        });
+    </script>
+</body>
+</html>
