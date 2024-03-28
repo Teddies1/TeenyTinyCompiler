@@ -40,7 +40,7 @@ def compile_and_return():
         return "No selected file"
     
     # Save the uploaded file
-    uploaded_file_path = 'uploaded_file.teeny'
+    uploaded_file_path = 'files/input.teeny'
     file.save(uploaded_file_path)
     
     print("Teeny Tiny Compiler")
