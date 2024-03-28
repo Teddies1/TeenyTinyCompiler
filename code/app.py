@@ -7,24 +7,6 @@ import os
 
 app = Flask(__name__)
 
-# def main():
-#     print("Teeny Tiny Compiler")
-
-#     if len(sys.argv) != 2:
-#         sys.exit("Error: Compiler needs source file as argument.")
-#     with open(sys.argv[1], 'r') as inputFile:
-#         source = inputFile.read()
-
-#     # Initialize the lexer, emitter, and parser.
-#     lexer = Lexer(source)
-#     emitter = Emitter("out.c")
-#     parser = Parser(lexer, emitter)
-
-#     parser.program() # Start the parser.
-#     emitter.writeFile() # Write the output to file.
-#     print("Compiling completed.")
-
-
 @app.route('/')
 def index():
     return send_file('index.html')
@@ -38,10 +20,8 @@ def compile_and_return():
     
     if file.filename == '':
         return "No selected file"
-    
     # Save the uploaded file
-    uploaded_file_path = 'files/input.teeny'
-    file.save(uploaded_file_path)
+    uploaded_file_path = 'files/' + file.filename
     
     print("Teeny Tiny Compiler")
     with open(uploaded_file_path) as inputFile:
@@ -49,7 +29,7 @@ def compile_and_return():
 
     # Initialize the lexer, emitter, and parser.
     lexer = Lexer(source)
-    emitter = Emitter("files/output.c")
+    emitter = Emitter("files/compiledoutput.c")
     parser = Parser(lexer, emitter)
 
     parser.program() # Start the parser.
