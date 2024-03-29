@@ -1,15 +1,20 @@
+import sys
+import os
+
+code_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), 'code'))
+sys.path.append(code_dir)
+
 from lexer import *
 from emit import *
 from parse import *
-import sys
-from flask import Flask, request, send_file
-import os
+
+from flask import Flask, request, send_file, render_template
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return send_file('index.html')
+    return render_template('index.html')
 
 @app.route('/compile_and_return', methods=['POST'])
 def compile_and_return():
@@ -37,7 +42,7 @@ def compile_and_return():
     print("Compiling completed.")
     
     # Return the compiled C file
-    return send_file("../"+emitter.fullPath, as_attachment=True)
+    return send_file(emitter.fullPath, as_attachment=True)
 
 if __name__ == '__main__':
     app.run(debug=True)
