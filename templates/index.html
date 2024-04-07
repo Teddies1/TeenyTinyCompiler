@@ -3,15 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>File Processor</title>
+    <link rel="stylesheet" href="../static/styles.css">
+    <title>SC4052 Project</title>
 </head>
 <body>
-    <h1>File Processor</h1>
+    <h1>Welcome to Hon Joo's Compiler as a Service!</h1>
+    <div class="description">
+        Test
+    </div>
     <form id="uploadForm" enctype="multipart/form-data">
         <input type="file" id="fileInput" name="fileInput" accept=".txt">
-        <button type="submit">Process File</button>
+        <button type="submit">Compile!</button>
     </form>
     <p id="output"></p>
+
+
 
     <script>
         document.getElementById("uploadForm").addEventListener("submit", function(event){
