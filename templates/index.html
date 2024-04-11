@@ -7,18 +7,22 @@
     <title>SC4052 Project</title>
 </head>
 <body>
-    <h1>Welcome to Hon Joo's Compiler as a Service!</h1>
-    <div class="description">
-        Test
+    <div class="header">
+        <div class="header-text">Welcome to Hon Joo's Compiler as a Service!</div>
     </div>
-    <form id="uploadForm" enctype="multipart/form-data">
-        <input type="file" id="fileInput" name="fileInput" accept=".txt">
-        <button type="submit">Compile!</button>
-    </form>
+    <div class="middle-section">
+        <div class="description">
+            Test
+        </div>
+        <form id="uploadForm" enctype="multipart/form-data">
+            <input type="file" id="fileInput" name="fileInput" accept=".txt">
+            <button type="submit">Compile!</button>
+        </form>
+    </div>
     <p id="output"></p>
-
-
-
+    <div class="footer">
+        Project done for the SC4052 Cloud Computing module.
+    </div>
     <script>
         document.getElementById("uploadForm").addEventListener("submit", function(event){
             event.preventDefault(); // Prevent default form submission
