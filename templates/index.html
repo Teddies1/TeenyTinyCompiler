@@ -12,10 +12,13 @@
     </div>
     <div class="middle-section">
         <div class="description">
-            Test
+            This application is a small project for a compiler as a service. With this application, you can compile code in the 
+            Tiny BASIC language into C code! Additionally, this C code is compilable and runnable!
+
+            To start, upload a Tiny BASIC code file. The file must end with the extension ".teeny".
         </div>
         <form id="uploadForm" enctype="multipart/form-data">
-            <input type="file" id="fileInput" name="fileInput" accept=".txt">
+            <input type="file" id="fileInput" name="fileInput" accept=".txt" required>
             <button type="submit">Compile!</button>
         </form>
     </div>
@@ -41,6 +44,7 @@
                 a.href = url;
                 a.download = "compiledoutput.c";
                 document.body.appendChild(a);
+                a.style = "display: none";
                 a.click();
                 window.URL.revokeObjectURL(url);
             });
