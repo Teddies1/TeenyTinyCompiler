@@ -38,7 +38,6 @@ input[type="file"]::file-selector-button, button {
 
 button {
     font-size: 18px;
-    height: 40px;
 }
 
 #uploadForm {
@@ -49,6 +48,7 @@ button {
     padding: 48px;
     border: 2px solid #1f2937;
     border-radius: 10px;
+    margin: 12px;
 }
 
 .description {
@@ -61,11 +61,46 @@ button {
     font-size: 24px;
 }
 
+li {
+    list-style-type: none;
+    padding: 6px;
+}
+
 input {
     font-size: 24px;
     padding: 24px;
     text-align-last: center;
     margin: auto;
+}
+
+.example-cards {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.row-1 {
+    display: flex;
+    gap: 32px;
+    align-self: center;
+}
+
+.card {
+    border: 1px solid #eee;
+    box-shadow: 2px 4px 16px rgba(0,0,0,.06);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.example-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
 }
 
 .footer {
@@ -75,3 +110,4 @@ input {
     padding: 16px;
     align-items: center;
 }
+

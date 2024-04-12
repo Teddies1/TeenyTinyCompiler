@@ -12,17 +12,76 @@
     </div>
     <div class="middle-section">
         <div class="description">
-            This application is a small project for a compiler as a service. With this application, you can compile code in the 
-            Tiny BASIC language into C code! Additionally, this C code is compilable and runnable!
-
-            To start, upload a Tiny BASIC code file. The file must end with the extension ".teeny".
+            <ul>
+                <li>
+                    This application is a small project for a compiler as a service. With this application, you can compile code in the 
+                    Tiny BASIC language into C code! Additionally, this C code is compilable and runnable!
+                </li>
+                <li>
+                    To start, upload a Tiny BASIC code file. The file must end with the extension <code>.tiny</code>. The output <code>.c</code> file will be automatically downloaded.
+                </li>
+                <li>
+                    To compile your output file, run <code>gcc filename.c -o filename</code> and then run <code>./filename</code>. 
+                    Voila! Your C program has been successfully run!
+            </ul>
         </div>
         <form id="uploadForm" enctype="multipart/form-data">
             <input type="file" id="fileInput" name="fileInput" accept=".txt" required>
             <button type="submit">Compile!</button>
         </form>
     </div>
-    <p id="output"></p>
+    
+    <div class="example-cards">
+        <div class="example-text">
+            Here are some example BASIC code for you to play with! 
+            The first one lets you calculate the average of n values, 
+            and the second prints the fibonacci sequence for n numbers.
+        </div>
+        <div class="row-1">
+            <div class="card">
+                <pre>
+    # Compute average of given values.
+
+    LET a = 2
+    WHILE a < 1 REPEAT
+        PRINT "Enter number of scores: "
+        INPUT a
+    ENDWHILE
+
+    LET b = 0
+    LET s = 0
+    PRINT "Enter one value at a time: "
+    WHILE b < a REPEAT
+        INPUT c
+        LET s = s + c
+        LET b = b + 1
+    ENDWHILE
+
+    PRINT "Average: "
+    PRINT s / a
+                </pre>
+            </div>
+            <div class="card">
+                <pre>
+    # Find the fibonacci sequence for n numbers.
+
+    PRINT "How many fibonacci numbers do you want?"
+    INPUT nums
+    PRINT ""
+
+    LET a = 0
+    LET b = 1
+    WHILE nums > 0 REPEAT
+        PRINT a
+        LET c = a + b
+        LET a = b
+        LET b = c
+        LET nums = nums - 1
+    ENDWHILE
+                </pre>
+            </div>
+        </div>
+    </div>
     <div class="footer">
         This project was done in the spirit of learning about compilers and building web applications.
     </div>
