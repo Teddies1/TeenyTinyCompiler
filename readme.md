@@ -1,14 +1,9 @@
-# Compiler App
-#### Video Demo:  https://youtu.be/91aEuqMsSIw
-
 ## Introduction
-I am Hon Joo, a incoming senior majoring in Computer Science. I wanted to learn more about compilers because it was interesting to me. Learning about compilers can also help boost my fundamental knowledge with regards to data structures, algorithms and how langugages work. I will be enrolling in a upper level
-compilers elective class this upcoming semester. I hope to learn more about compilers and have fun in the
-process!
+I wanted to learn more about compilers because it was interesting to me. Learning about compilers can also help boost my fundamental knowledge with regards to data structures, algorithms and how langugages work. I will be enrolling in a upper level compilers elective class this upcoming semester. I hope to learn more about compilers and have fun in the process!
 
-I stumbled upon the TeenyTinyCompiler [tutorial](https://austinhenley.com/blog/challengingprojects.html) by Austin Henley, which was a gateway to learning about compilers. With the compiler I made from the tutorial's help, I decided to wrap that compiler into a simple web application for the CS50 final project.
+I stumbled upon the TeenyTinyCompiler [tutorial](https://austinhenley.com/blog/challengingprojects.html) by Austin Henley, which was a gateway to learning about compilers. With the compiler I made from the tutorial's help, I decided to wrap that compiler into a simple web application.
 
-This application is not complete, of course. After the completion of CS50, the application will be maintained and continually iterated on. The compiler is a simple one, and advanced features like handling methods and data structures are in the works. The webpage can stand to look prettier too.
+This application is not complete, of course. The application will be maintained and continually iterated on. The compiler is a simple one, and advanced features like handling methods and data structures are in the works. The webpage can stand to look prettier too.
 
 ## Description
 
